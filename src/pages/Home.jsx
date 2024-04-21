@@ -34,16 +34,21 @@ const Home = () => {
   return (
     <div>
         {
-            loading ? <Spinner/> 
+            loading ? <div className='flex items-center justify-center h-[100vh] text-2xl'>
+                <Spinner/> 
+            </div> 
             : post.length > 0 ? 
-            (<div>
+            (<div className='grid sm:grid-col-2 md:grid-col-3 lg:grid-cols-4 max-w-6xl mx-auto p-2 space-y-10 space-x-5
+            min-h-80vh'>
                 {
                     post.map( (post) => (
                         <Products key={post.id} post={post}/>
                     ))
                 }
             </div>) : 
-            (<p> No data found</p>)
+            (<p className='flex items-center justify-center text-3xl'>
+                No data found
+            </p>)
         }
 
     </div>

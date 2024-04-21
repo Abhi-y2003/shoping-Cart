@@ -15,19 +15,19 @@ const CartItem = ({post, postIndex}) => {
       toast.success("Item removed from cart")
     }
   return (
-    <div>
+    <div className='w-[90%]'>
 
-        <div>
+        <div className='flex gap-5 border-gray-700 border-b-2 my-2 py-4 '>
 
-            <div>
-                <img src={post.image}/>
+            <div className='h-[200px] w-[200px]'> 
+                <img src={post.image} className='h-full w-full object-contain '/>
             </div>
 
 
             <div>
-                <h1>{post.title}</h1>
+                <h1 className='mt-5 text-lg font-semibold'>{post.title}</h1>
                 <p>
-                    {post.description}
+                    {post.description.split(" ").slice(0,15).join(" ") + '...'}
                 </p>
 
                 <div>
